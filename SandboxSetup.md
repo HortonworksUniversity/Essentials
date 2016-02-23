@@ -10,7 +10,7 @@ Some current gotchas are as follows:
 
 The root password is `hadoop` *(not requiring it to be changed)*.
 
-Ambari is available at <http://127.0.0.1:8080>, but the following commands must be run to get the `admin` userid' password set to `admin`.
+Ambari is available at <http://127.0.0.1:8080>, but the following commands must be run to get the `admin` userid's password set to `admin`.
 
 `psql -U ambari ambari` will ask your for a password which is
 `bigdata` and then at the `ambari=>` prompt type the following command.

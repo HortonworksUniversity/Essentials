@@ -10,7 +10,7 @@ Status: Under Development
 
 The Hadoop Essentials course uses demonstrations instead of hands-on labs due to the
 short duration of the offering.  That said, the demos are closely aligned with the
-[publicly available tutorials](http://hortonworks.com/training/class/hadoop-essentials/ "Tutorials").
+[publicly available tutorials](http://hortonworks.com/products/hortonworks-sandbox/#tutorial_gallery "Tutorials").
 
 Additionally, to allow participants to recreate the demos performed during the course, the 
 [Hortonworks Sandbox](http://hortonworks.com/products/hortonworks-sandbox/ "Hortonworks Sandbox") 

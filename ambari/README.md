@@ -1,16 +1,5 @@
 # Operational Overview with Ambari
 
-## TBD "backdrop" Section
-
-PROLLY SOMETHING ALONG THE LINE OF WHAT WE SEE IN TODAY'S
-LAB SECTIONS ABOUT PRE/POST CONDITIONS, ETC...
-
-PREFERABLY AS A TABLE W/O A HEADER SO THAT HEADERS ARE 
-SPECIFIC TO THE DEMO ITSELF
-
-... IDEALLY, A VIDEO LINK WILL BE PRESENT TO LET SOMEONE WATCH
-THIS DEMO FIRST ...
-
 ## Ambari's Role
 
 [Apache Ambari](http://ambari.apache.org/ "Ambari") aids very specifically with the following areas for a Hadoop cluster
@@ -28,11 +17,12 @@ A quick way to get a feel for the LOE involved in manually configuring
 a Hadoop cluster is to look at the activities required.  The 
 [Manual Installation Guide](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.4/bk_installing_manually_book/bk_installing_manually_book-20151221.pdf "Manual Install")
 devotes almost 200 pages to this, while the comparable 
+operations in the 
 [Ambari Installation Guide](http://docs.hortonworks.com/HDPDocuments/Ambari-2.2.0.0/bk_Installing_HDP_AMB/bk_Installing_HDP_AMB-20151221.pdf "Ambari Install")
-spans about 15 pages.
+span about 15 pages.
 
-While both approachess require HW & OS prep activities, the Ambari route
-quickly differs by only requiring two quick CLI operations, 
+While both approaches require HW & OS prep activities, the Ambari route
+quickly differs by only needing two quick CLI operations, 
 ```yum install ambari-server``` and ```ambari-sever setup```, before
 focusing on its GUI wizard process to completely install a cluster.
 
@@ -63,10 +53,10 @@ find the following stanza.
     </property>
 ```
 
-To see how to set that, as well as valuable details on what values are 
-acceptable just navigate to _Services_ > _Hive_ > _Configs_ > _Settings_ >
-_Optimization_ > _Execution Engine_.  You can even change it to MapReduce
-and save a new version to see the visual compare tools like shown below
+To see how to set that, as well as what values are acceptable just navigate to _Services_ > _Hive_ > _Configs_
+> _Settings_ > _Optimization_ > _Execution Engine_.  You
+can even change it to MapReduce and save a new version to 
+see the visual compare tools like shown below
 before reverting back to the prior version.
 
 ![alt text](./images/ExecutionEngineChange.png "config diff")
