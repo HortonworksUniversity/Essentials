@@ -19,20 +19,20 @@ details regarding this course.
 
 ## The Demonstrations
 
-[Operational Overview with Ambari](./ambari/README.md)
+[Operational Overview with Ambari](./demos/ambari/README.md)
 
-[Ingesting Data into HDFS](./ingestion/README.md)
+[Ingesting Data into HDFS](./demos/ingestion/README.md)
 
-[Streaming Data into HDFS](./storm/README.md)
+[Streaming Data into HDFS](./demos/storm/README.md)
 
-[Foundational Processing with MapReduce](./mapreduce/README.md)
+[Foundational Processing with MapReduce](./demos/mapreduce/README.md)
 
-[Data Manipulation with Hive](./hive/README.md)
+[Data Manipulation with Hive](./demos/hive/README.md)
 
-[Risk Analysis with Pig](./pig/README.md)
+[Risk Analysis with Pig](./demos/pig/README.md)
 
-[Risk Analysis with Spark](./spark/README.md)
+[Risk Analysis with Spark](./demos/spark/README.md)
 
-[Data Pipeling with Falcon](./falcon/README.md)
+[Data Pipeling with Falcon](./demos/falcon/README.md)
 
-[Securing Hive with Ranger](./ranger/README.md)
+[Securing Hive with Ranger](./demos/ranger/README.md)
