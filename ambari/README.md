@@ -29,7 +29,7 @@ quickly differs by only needing two quick CLI operations,
 ```yum install ambari-server``` and ```ambari-sever setup```, before
 focusing on its GUI wizard process to completely install a cluster.
 
-While the [SandboxSetup.md](../SandboxSetup.md) that we are using already
+While the [Sandbox Setup](../SandboxSetup.md) that we are using already
 has an installed version of HDP, you can get a sense of this install wizard
 by starting the process of adding a new service.  Click on _Actions_ > 
 _Add Service_ > _Accumulo_ > _Next_ to see something like presented in the
