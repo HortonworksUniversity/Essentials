@@ -1,5 +1,8 @@
 # Operational Overview with Ambari
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=AWRMQmLmuMk" target="_blank"><img src="http://img.youtube.com/vi/AWRMQmLmuMk/0.jpg" 
+alt="Ops with Ambari" width="240" height="180" border="10" /></a>
+
 ## Ambari's Role
 
 [Apache Ambari](http://ambari.apache.org/ "Ambari") aids very specifically with the following areas for a Hadoop cluster
