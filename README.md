@@ -14,7 +14,7 @@ short duration of the offering.  That said, the demos are closely aligned with t
 
 Additionally, to allow participants to recreate the demos performed during the course, the 
 [Hortonworks Sandbox](http://hortonworks.com/products/hortonworks-sandbox/ "Hortonworks Sandbox") 
-is utilized.  See [Sandbox Setup](./SandboxSetup.md) for specific setup and configuration 
+is utilized.  See [Sandbox Setup](./demos/SandboxSetup.md) for specific setup and configuration 
 details regarding this course.
 
 ## The Demonstrations

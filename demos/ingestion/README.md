@@ -17,7 +17,7 @@ local disk drive and unzip it.  You should now find the following files.
 
 ## Log into Ambari
 
-With a properly configured [Sandbox Setup](./SandboxSetup.md) you can  
+With a properly configured [Sandbox Setup](../SandboxSetup.md) you can  
 use userid `maria_dev` with password of `maria_dev` when logging into Ambari.
 Once you get to the Dashboard, click on the "Ambari View" icon that is
 just to the left of the users' name in the upper right corner of the UI as
