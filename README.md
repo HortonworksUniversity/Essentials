@@ -1,7 +1,6 @@
 # Hadoop Essentials
 
-This GitHub project stores content related to the  
-[Hadoop Essentials](http://hortonworks.com/training/class/hadoop-essentials/ "Hadoop Essentials")
+This GitHub project stores content related to the [Hadoop Essentials](http://hortonworks.com/training/class/hadoop-essentials/ "Hadoop Essentials")
 course offering from Hortonworks Univeristy.
 
 Status: Under Development
@@ -16,6 +15,11 @@ Additionally, to allow participants to recreate the demos performed during the c
 [Hortonworks Sandbox](http://hortonworks.com/products/hortonworks-sandbox/ "Hortonworks Sandbox") 
 is utilized.  See [Sandbox Setup](./demos/SandboxSetup.md) for specific setup and configuration 
 details regarding this course.
+
+_The target audience for this repo is the instructors themselves to provide
+them with guidance for presenting these demos to a live audience, but all
+are welcome to utilize and feedback (and fixes via pull requests) is 
+surely appreciated._
 
 ## The Demonstrations
 
