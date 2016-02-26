@@ -60,16 +60,87 @@ Database Explorer widget.
 SHOW TABLES;
 DESCRIBE geolocation_stage;
 SHOW CREATE TABLE geolocation_stage;
-``
+```
 
-## Load Tables
+## Load Hive Tables
 
-
+The following graphic identifies the two main approaches on the classic 
+"just put the files there" strategy for _loading_ Hive tables.
 
 ![alt text](./images/LoadTables.png "loading alts")
 
-OTHER WAYS, TOO, LIKE ITAS/CTAS, PROGRAMATICALLY ADDING
-NOT TO MENTION CRUD OPS
+### Move Files
+
+Use the HDFS Files Ambari View to _move_ `/user/maria_dev/geolocation/geolocation.csv` 
+to the `/apps/hive/warehouse/geolocation_stage` directory and then verifying that
+this data is now accessible via its _wrapper_ Hive table.
+
+Leverage the _Load sample data_ smart icon (to right of table name in
+Database Explorer) to create and run the following query.
+
+```
+SELECT * FROM geolocation_stage LIMIT 100;
+```
+### Load Command
+
+The following Hive command will initial the "front door" _load_ operation.
+
+```
+LOAD DATA INPATH '/user/maria_dev/geolocation/trucks.csv' 
+OVERWRITE INTO TABLE trucks_stage;
+```
+NOTE: Be sure to showcase _Content Assist_ (Control+Space to invoke) to build queries.
+
+Verify that a ```SELECT``` query shows the results and then callout that the 
+```/user/maria_dev/geolocation``` folder is empty as the ```LOAD``` command 
+moved the ```trucks.csv``` file to ```/apps/hive/warehouse/trucks_stage```.
+
+### CTAS & INSERT INTO
+
+Another popular approach is called Create-Table-As-Select (CTAS) where we use the
+results (content + metadata) to create and load a new Hive table as shown by the
+following example.
+
+```
+CREATE TABLE geolocation STORED AS ORC AS 
+    SELECT * FROM geolocation_stage;
+```
+
+After querying this new table to make sure it has the same data as 
+```geolocation_stage```, execute ```DESCRIBE FORMATTED geolocation;``` and scroll
+down to the bottom of the Results table to see output in the Storage Information
+section.
+
+Since the CTAS operation does perform a ```CREATE TABLE``` DDL operation, 
+additional _"below the line"_ properties & clauses can be identified as needed as
+shown in the next create of another ORC table.
+
+```
+CREATE TABLE trucks STORED AS ORC TBLPROPERTIES ("orc.compress.size"="1024") AS 
+    SELECT * FROM trucks_stage;
+```
+
+NOTE: Any valid query can work embedded in an CTAS statement.
+
+Additionally, check out [Inserting data into Hive Tables from queries](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DML#LanguageManualDML-InsertingdataintoHiveTablesfromqueries) for other options of loading tables
+that are natively built into Hive.
+
+### Other Options
+
+There are still other ways to get data into Hive that include the following.
+
+#### Ecosystem Frameworks & Tools
+
+The are multiple options available when programmatically loading Hive tables.  
+This includes writing applications with languages like Pig and Spark as well as 
+leveraging ecosystem components such as Sqoop, Flume & Storm. 
+
+#### CRUD Operations
+
+Since Hive 0.14, traditional DML commands such as ```INSERT```, ```UPDATE``` and
+```DELETE``` have also been available, but they aren't exact replacements for 
+their counterparts in true RDBMS systems; find out more on 
+[Hive's DML wiki page](https://cwiki.apache.org/confluence/x/9IKhAQ).
 
 
 ## Manipulate Data
