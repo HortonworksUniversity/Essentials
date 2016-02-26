@@ -1,11 +1,18 @@
 # Streaming Data into HDFS
 
+**GOAL** - Load sample trucking data into HDFS and HBase via a real-time
+data streaming workflows
+
+**PREREQUISITE** - None
+
+**SEE ALSO** - This demo is based on the publicly-available 
+[Real Time Data Transportation and Ingestion](http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/ "Tutorial: Real Time Data Transportation and Ingestion") 
+Hortonworks tutorial
+
+**RECORDED DEMO**
+
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=Bp96x70HpEM" target="_blank"><img src="http://img.youtube.com/vi/Bp96x70HpEM/0.jpg" 
 alt="Streaming into HDFS" width="240" height="180" border="10" /></a>
-
-This demo is based on the publicly-available 
-[Real Time Data Transportation and Ingestion](http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/ "Tutorial: Real Time Data Transportation and Ingestion") 
-Hortonworks tutorial.
 
 ## Generating Events into Kafka
 

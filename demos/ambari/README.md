@@ -1,5 +1,15 @@
 # Operational Overview with Ambari
 
+**GOAL** - Using the Hortonworks Sandbox, provide an overview of Apache
+Ambari; especially from the perspective of the Ops perspective of 
+administering a Hadoop cluster
+
+**PREREQUISITE** - [Sandbox Setup](../SandboxSetup.md)
+
+**SEE ALSO** - [Hortonworks Ambari Page](http://hortonworks.com/hadoop/ambari/)
+
+**RECORDED DEMO**
+
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=AWRMQmLmuMk" target="_blank"><img src="http://img.youtube.com/vi/AWRMQmLmuMk/0.jpg" 
 alt="Ops with Ambari" width="240" height="180" border="10" /></a>
 
