@@ -9,6 +9,11 @@ Hortonworks tutorial.
 
 ## Generating Events into Kafka
 
+The first part of this demo focuses on producing trucking events into a 
+Kafka topic with the following format.
+
+XXXXXXXXXX ADD FORMAT AN/DOR EXAMPLE DATA XXXXXXXXXX
+
 After using Ambari to verify the Kafka service is running (and start if
 necessary), create/verify a new Topic.
 
@@ -17,6 +22,8 @@ necessary), create/verify a new Topic.
 [root@sandbox bin]# ./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic truckevent
 [root@sandbox bin]# ./kafka-topics.sh --list --zookeeper localhost:2181
 ```
+
+NOTE: You can delete this topic with `/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic truckevent`.
 
 Then download the event generator code.
 
@@ -27,16 +34,39 @@ Then download the event generator code.
 [root@sandbox TruckEvents]# unzip Tutorials-master-2.3.zip
 ```
 
+Make a copy of the `pom.xml` file and to account for a missing dependency. 
+
+```
+[root@sandbox TruckEvents]# cd Tutorials-master
+[root@sandbox Tutorials-master]# cp pom.xml pom.xml.backup
+```
+
+Add the following stanza to ```pom.xml```.
+
+```
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+```
+
+Then rebuild the artifacts (this will take several minutes).
+
+```
+[root@sandbox Tutorials-master]# mvn clean install
+[root@sandbox Tutorials-master]# mvn clean package
+```
+
 To start the Kafka Producer, execute the following command.
 
 ```
-[root@sandbox TruckEvents]# cd /opt/TruckEvents/Tutorials-master 
 [root@sandbox Tutorials-master]# java -cp target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial1.TruckEventsProducer sandbox.hortonworks.com:6667 sandbox.hortonworks.com:2181
 ```
 
 After a few seconds, press Control-C to stop the producer.
 
-We have now successfully compiled and had the Kafka producer publish some messages to the Kafka cluster.  To verify, execute the following command to start a consumer to see the produced events.
+We have now successfully compiled the Kafka producer and had it publish some messages to the Kafka cluster.  To verify, execute the following command to start a consumer to see the produced events.
 
 ```
 [root@sandbox Tutorials-master]# /usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --zookeeper sandbox.hortonworks.com:2181 --topic truckevent --from-beginning
@@ -47,4 +77,69 @@ You can press Control-C to stop the console consumer.
 
 ## Process Events with Storm
 
+For this demo, we have a simple Storm topology made up of the following 
+components (and visualized below).
 
+* **Kafka Spout** - Retrieves events from the Kafka topic and raises them as Tuples into a Stream
+* **HDFS Bolt** - Receives the Tuples from the spout and persists the information to HDFS files
+* **HBase Bolt** - Receives the Tuples from the spout and inserts the data into HBase tables
+..* All events go into the `truck_events` table
+..* Only those events that represent an "incident" are accounted for in `driver_dangerous_events`
+
+![alt text](./images/Topology.png "topology")
+
+Via Ambari, ensure HBase is running and then create the two previously
+described tables
+```
+[root@sandbox Tutorials-master]# hbase shell
+hbase(main):001:0> create 'truck_events', 'events'
+hbase(main):001:0> create 'driver_dangerous_events', 'count'
+hbase(main):001:0> list
+```
+
+As this demo will utilize `/tmp/hive`, make the following permission changes.
+
+```
+[root@sandbox Tutorials-master]# hdfs dfs -ls /tmp
+drwx-wx-wx   - ambari-qa hdfs          0 2016-02-12 19:15 /tmp/hive
+[root@sandbox Tutorials-master]# su - hdfs
+[hdfs@sandbox ~]$ hdfs dfs -chmod -R 777 /tmp/hive
+[hdfs@sandbox ~]$ hdfs dfs -ls /tmp
+drwxrwxrwx   - ambari-qa hdfs          0 2016-02-12 19:15 /tmp/hive
+[hdfs@sandbox ~]$ exit
+logout
+[root@sandbox Tutorials-master]# 
+```
+
+Via Ambari, ensure Storm is running and then deploy the topology.
+
+```
+[root@sandbox Tutorials-master]# storm jar target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial3.TruckEventProcessingTopology  
+```
+
+Restart the Kafka event generator.
+
+```
+[root@sandbox Tutorials-master]# java -cp target/Tutorial-1.0-SNAPSHOT.jar com.hortonworks.tutorials.tutorial1.TruckEventsProducer sandbox.hortonworks.com:6667 sandbox.hortonworks.com:2181
+```
+
+Verify that the topology is being monitored via the
+[Storm UI](http://127.0.0.1:8744/ "Storm UI").  Drill into the topology itself
+as well as the spout and bolts to see counts.  Be sure to also review the 
+WHATSIT CALLED? VISUAL DISPLAY which uses visual metaphors such as:
+* Blue circles for spouts
+* Green (to Red) circles for bolts
+* Sizes of circles are in relation to how the performance compares with other components of the topology
+* Width of line is comparative to how much data is being delivered for each stream
+
+Via the Ambari HDFS View, verify data is being populated in `/truck-events-v4`.
+
+Via the HBase shell, verify rows are being added to the tables.
+
+```
+[root@sandbox Tutorials-master]# hbase shell
+hbase(main):001:0> count 'truck_events'
+hbase(main):001:0> count 'driver_dangerous_events'
+```
+
+_To stop everything, hit Control-C in the Kafka producer window and "kill" the topology from the Storm UI._
