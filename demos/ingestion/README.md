@@ -1,7 +1,7 @@
 # Ingesting Data into HDFS
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=T-mkrUyCRJs" target="_blank"><img src="http://img.youtube.com/vi/T-mkrUyCRJs/0.jpg" 
-alt="Ops with Ambari" width="240" height="180" border="10" /></a>
+alt="Ingesting into HDFS" width="240" height="180" border="10" /></a>
 
 This demo is based on the publicly-available 
 [Loading Data into HDFS](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_4 "Tutorial: Loading Data") 

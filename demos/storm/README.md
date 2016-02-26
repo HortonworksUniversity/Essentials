@@ -1,7 +1,7 @@
 # Streaming Data into HDFS
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=T-mkrUyCRJs" target="_blank"><img src="http://img.youtube.com/vi/T-mkrUyCRJs/0.jpg" 
-alt="Ops with Ambari" width="240" height="180" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Bp96x70HpEM" target="_blank"><img src="http://img.youtube.com/vi/Bp96x70HpEM/0.jpg" 
+alt="Streaming into HDFS" width="240" height="180" border="10" /></a>
 
 This demo is based on the publicly-available 
 [Real Time Data Transportation and Ingestion](http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/ "Tutorial: Real Time Data Transportation and Ingestion") 
@@ -27,7 +27,8 @@ necessary), create/verify a new Topic.
 [root@sandbox bin]# ./kafka-topics.sh --list --zookeeper localhost:2181
 ```
 
-NOTE: You can delete this topic with `/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic truckevent`.
+NOTE: You can delete this topic with `/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic truckevent` 
+**AFTER** you switch the `delete.topic.enable` value to `true` found in Ambari under _Services_ > _Kafka_ > _Configs_ > _Advanced kafka-broker_.
 
 Then download the event generator code.
 
@@ -129,7 +130,9 @@ Restart the Kafka event generator.
 
 Verify that the topology is being monitored via the
 [Storm UI](http://127.0.0.1:8744/ "Storm UI").  Drill into the topology itself
-as well as the spout and bolts to see counts.  Be sure to also review the 
+as well as the spout and bolts to see counts.  NOTE: It will likely take 
+several minutes before the topology begins to show "emit" counts, so please 
+be patient.  Also, while in the Storm UI be sure to also review the 
 Visualization Tool output which uses visual metaphors such as:
 
 * Blue circles for spouts
