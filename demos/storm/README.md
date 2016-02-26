@@ -4,15 +4,19 @@
 alt="Ops with Ambari" width="240" height="180" border="10" /></a>
 
 This demo is based on the publicly-available 
-[Loading Data into HDFS](http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/ "Tutorial: Real Time Data Transportation and Ingestion") 
+[Real Time Data Transportation and Ingestion](http://hortonworks.com/hadoop-tutorial/simulating-transporting-realtime-events-stream-apache-kafka/ "Tutorial: Real Time Data Transportation and Ingestion") 
 Hortonworks tutorial.
 
 ## Generating Events into Kafka
 
 The first part of this demo focuses on producing trucking events into a 
-Kafka topic with the following format.
+Kafka topic with the following format and example data.
 
-XXXXXXXXXX ADD FORMAT AN/DOR EXAMPLE DATA XXXXXXXXXX
+Event Time | Driver ID | Truck ID | Event Type | Longitude | Latitude
+--- | --- | --- | --- | --- | ---
+2016-02-26 02:14:27.311|4|14|Normal|-73.994914000000108|40.666580999999951
+2016-02-26 02:14:28.315|1|11|Unsafe tail distance|-79.74708499999997|42.129558000000088
+2016-02-26 02:14:29.319|2|12|Normal|-74.02332|41.50084
 
 After using Ambari to verify the Kafka service is running (and start if
 necessary), create/verify a new Topic.
@@ -83,8 +87,8 @@ components (and visualized below).
 * **Kafka Spout** - Retrieves events from the Kafka topic and raises them as Tuples into a Stream
 * **HDFS Bolt** - Receives the Tuples from the spout and persists the information to HDFS files
 * **HBase Bolt** - Receives the Tuples from the spout and inserts the data into HBase tables
-..* All events go into the `truck_events` table
-..* Only those events that represent an "incident" are accounted for in `driver_dangerous_events`
+  * All events go into the `truck_events` table
+  * Only those events that represent an "incident" are accounted for in `driver_dangerous_events`
 
 ![alt text](./images/Topology.png "topology")
 
@@ -126,11 +130,12 @@ Restart the Kafka event generator.
 Verify that the topology is being monitored via the
 [Storm UI](http://127.0.0.1:8744/ "Storm UI").  Drill into the topology itself
 as well as the spout and bolts to see counts.  Be sure to also review the 
-WHATSIT CALLED? VISUAL DISPLAY which uses visual metaphors such as:
+Visualization Tool output which uses visual metaphors such as:
+
 * Blue circles for spouts
-* Green (to Red) circles for bolts
+* Green _(to Red)_ circles for bolts
 * Sizes of circles are in relation to how the performance compares with other components of the topology
-* Width of line is comparative to how much data is being delivered for each stream
+* Width of line is relative to how much data is being delivered for each stream
 
 Via the Ambari HDFS View, verify data is being populated in `/truck-events-v4`.
 
