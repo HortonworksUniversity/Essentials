@@ -11,7 +11,7 @@ Hortonworks tutorial
 
 **RECORDED DEMO**
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=Bp96x70HpEM" target="_blank"><img src="http://img.youtube.com/vi/Bp96x70HpEM/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=eOhv60m0kkc" target="_blank"><img src="http://img.youtube.com/vi/eOhv60m0kkc/0.jpg" 
 alt="Leveraging Hive" width="240" height="180" border="10" /></a>
 
 ## Create Tables
@@ -23,7 +23,7 @@ explore the UI.
 
 Show that 
 [Hive's DDL Documentation](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL) 
-should be very family to all _(at least, "above the line")_ and then execute 
+should be very familiar to all _(at least, "above the line")_ and then execute 
 the following table create in an empty Worksheet.
 
 ```
@@ -65,7 +65,8 @@ SHOW CREATE TABLE geolocation_stage;
 ## Load Hive Tables
 
 The following graphic identifies the two main approaches on the classic 
-"just put the files there" strategy for _loading_ Hive tables.
+"just put the files there" strategy for _loading_ Hive tables as well 
+as the "CTAS" model presented later in this section.
 
 ![alt text](./images/LoadTables.png "loading alts")
 
@@ -145,11 +146,6 @@ their counterparts in true RDBMS systems; find out more on
 
 ## Manipulate Data
 
-CREATE TRUCK_MILEAGE TABLE
-MAKE AVG MILEAGE QUERY AND SHOW EXPLAIN PLANS AND DAG
-CTAS AVG_MILEAGE TABLE
-QUERY NEW TABLE
-
 Run the following CTAS statement to calculate and store truck mileage from the 
 prior loaded ```trucks``` ORC-backed table into a new table called ```truck_mileage```.
 
@@ -163,7 +159,8 @@ After that, run a simple ```SELECT COUNT(*)``` query and after determing that it
 the "Save results..." pulldown to create an Excel worksheet of the results for 
 further review on your workstation.
 
-Complete the next query demonstrating the helpfulness of the Content Assist functionality.  NOTE: On Sandbox, this query may take a minute or two to complete.
+Complete the next query demonstrating the helpfulness of the Content Assist functionality and **save it before executing it**.  NOTE: On Sandbox, this 
+query may take a minute or two to complete.
 
 ```
 SELECT truckid, avg(mpg) avgmpg 
