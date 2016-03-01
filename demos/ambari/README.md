@@ -59,7 +59,7 @@ through any possibly restart activities to ensure they are utilized.
 For example, search for `execution` within `/etc/hive/conf/hive-site.xml` to 
 find the following stanza.
 
-```
+```xml
     <property>
       <name>hive.execution.engine</name>
       <value>tez</value>

@@ -3,7 +3,7 @@
 **GOAL** - Create and execute a Pig script that leverages Hive structures
 via HCatalog to calculate risk factors for drivers
 
-**PREREQUISITE:** [Data Manipulation with Hive](../hive/README.md)
+**PREREQUISITE** - [Data Manipulation with Hive](../hive/README.md)
 
 **SEE ALSO** - This demo is based on the publicly-available 
 [Pig Risk Factor Analysis](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_6 "Calculating Risk with Pig") 
@@ -175,6 +175,7 @@ final_data = foreach joinResult generate
     countsByDriver::total_occurrences as events, 
     mileage::totmiles as totmiles, 
     (float) mileage::totmiles / countsByDriver::total_occurrences as riskfactor;
+
 --save the results into the risk_factor Hive table
 STORE final_data INTO 'risk_factor' 
     USING org.apache.hive.hcatalog.pig.HCatStorer();

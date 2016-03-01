@@ -55,7 +55,7 @@ Make a copy of the `pom.xml` file and to account for a missing dependency.
 
 Add the following stanza to ```pom.xml```.
 
-```
+```xml
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
@@ -102,6 +102,7 @@ components (and visualized below).
 
 Via Ambari, ensure HBase is running and then create the two previously
 described tables
+
 ```
 [root@sandbox Tutorials-master]# hbase shell
 hbase(main):001:0> create 'truck_events', 'events'
