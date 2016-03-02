@@ -35,5 +35,6 @@ Clicking on _HDFS Files_ brings up the file viewer.
 
 ## Manipulating Files
 
-At this point, it should be self-explanatory how to upload these two files 
-into the user's home directory of `/user/maria_dev`.
+At this point, it should be self-explanatory how to upload these two 
+files into a new `geolocation` subdirectory of Maria's home directory 
+of `/user/maria_dev`.

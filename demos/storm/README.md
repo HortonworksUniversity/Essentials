@@ -63,6 +63,14 @@ Add the following stanza to ```pom.xml```.
         </dependency>
 ```
 
+Install Maven.
+
+```
+[root@sandbox Tutorials-master]# curl -o /etc/yum.repos.d/epel-apache-maven.repo https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo
+[root@sandbox Tutorials-master]# yum -y install apache-maven
+[root@sandbox Tutorials-master]# mvn -version
+```
+
 Then rebuild the artifacts (this will take several minutes).
 
 ```
@@ -86,7 +94,6 @@ We have now successfully compiled the Kafka producer and had it publish some mes
 
 You can press Control-C to stop the console consumer.
 
-
 ## Process Events with Storm
 
 For this demo, we have a simple Storm topology made up of the following 
@@ -108,20 +115,6 @@ described tables
 hbase(main):001:0> create 'truck_events', 'events'
 hbase(main):001:0> create 'driver_dangerous_events', 'count'
 hbase(main):001:0> list
-```
-
-As this demo will utilize `/tmp/hive`, make the following permission changes.
-
-```
-[root@sandbox Tutorials-master]# hdfs dfs -ls /tmp
-drwx-wx-wx   - ambari-qa hdfs          0 2016-02-12 19:15 /tmp/hive
-[root@sandbox Tutorials-master]# su - hdfs
-[hdfs@sandbox ~]$ hdfs dfs -chmod -R 777 /tmp/hive
-[hdfs@sandbox ~]$ hdfs dfs -ls /tmp
-drwxrwxrwx   - ambari-qa hdfs          0 2016-02-12 19:15 /tmp/hive
-[hdfs@sandbox ~]$ exit
-logout
-[root@sandbox Tutorials-master]# 
 ```
 
 Via Ambari, ensure Storm is running and then deploy the topology.

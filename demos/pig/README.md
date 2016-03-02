@@ -65,7 +65,7 @@ Filter out any normal events as we are looking for risky events.
 riskyEvents = FILTER geo BY event != 'normal';
 ```
 
-Project the date to include a count field and to exclude fields that are not
+Project the data to include a count field and to exclude fields that are not
 relevant for the risk analysis.
 
 ```pig
@@ -100,7 +100,7 @@ total number of risky events for the same driver.
 joinResult = JOIN countsByDriver BY driverid, mileage BY driverid;
 ```
 
-To see what the schema definition is for this joined output, run 
+To see what the schema definition looks like for this joined output, run 
 `describe joinResult;` which will return the following (NOTE: if you 
 run this you will need to add the `-useHCatalog` property as described
 later in this demo guide).
@@ -194,12 +194,13 @@ After clicking the _Add_ button you should see the following.
 
 ![alt text](./images/Arg2.png "see this")
 
-Now, check the _Execute on Tez_ checkbox and click the _Execute_ button.  Once
+Now, check the _Execute on Tez_ checkbox and click the _Execute_ button in
+the upper-right corner of the screen.  Once
 the job completes successfully you will not see any output as it is stored in
 the `risk_factor` Hive table.
 
-Navigate to the Hive View and find the five drivers with the worse calculated
-risk factor.
+Navigate to the Hive View and find the five drivers with the worst calculated
+risk factors.
 
 ```sql
 SELECT * 
