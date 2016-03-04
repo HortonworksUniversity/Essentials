@@ -217,3 +217,14 @@ SELECT r.driverid, r.riskfactor, g.city, g.state
  WHERE r.driverid = g.driverid
 ```
 
+This time pick the right-most icon in the toolbar select:
+
+* `driverid` for _xAxis_
+* `riskfactor` for _yAxis_
+* `city` for _group_
+* `riskfactor` for _size_
+
+![alt text](./images/AltGraph.png "more options")
+
+This is just a quick intro to the types of visualization opportunities 
+exist with Zeppelin.
