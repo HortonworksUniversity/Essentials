@@ -5,7 +5,7 @@
 **PREREQUISITE** - None
 
 **SEE ALSO** - This demo is based on the publicly-available 
-[Loading Data into HDFS](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_4 "Tutorial: Loading Data") 
+[Loading Data into HDFS](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_3 "Tutorial: Loading Data") 
 Hortonworks tutorial
 
 **RECORDED DEMO**

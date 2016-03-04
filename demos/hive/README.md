@@ -6,7 +6,7 @@ Hive tables
 **PREREQUISITE** - [Ingesting Data into HDFS](../ingestion/README.md)
 
 **SEE ALSO** - This demo is based on the publicly-available 
-[Hive and Data ETL](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_5 "Hive and Data ETL") 
+[Hive and Data ETL](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_4 "Hive and Data ETL") 
 Hortonworks tutorial
 
 **RECORDED DEMO**

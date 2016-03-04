@@ -6,7 +6,7 @@ via HCatalog to calculate risk factors for drivers
 **PREREQUISITE** - [Data Manipulation with Hive](../hive/README.md)
 
 **SEE ALSO** - This demo is based on the publicly-available 
-[Pig Risk Factor Analysis](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_6 "Calculating Risk with Pig") 
+[Pig Risk Factor Analysis](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_5 "Calculating Risk with Pig") 
 Hortonworks tutorial
 
 **RECORDED DEMO**
@@ -113,7 +113,7 @@ joinResult:
      mileage::totmiles: long}
 ```
 
-## Calculate Results
+## Calculate Risk
 
 As declared earlier, our driver risk factor is determined by dividing
 the total miles traveled by risky events occurrences.
@@ -212,9 +212,9 @@ SELECT *
 ## Visualize Data
 
 Pig does not have any native visualization tools.  You can exercise the 
-[Data Reporting with Excel](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_8 "Reporting with Excel") 
+[Data Reporting with Excel](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_7 "Reporting with Excel") 
 Hortonworks tutorial which can be reviewed in 
-[this video](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_8 "Excel Visualizations").
+[this video](http://hortonworks.com/hadoop-tutorial/geolocation-data-profit-from-predictive-analytics/ "Excel Visualizations").
 
 COTS solutions from BI tool vendors are also common ways to visualize 
 these aggregated values for many large enterprises as well as dedicated 
