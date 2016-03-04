@@ -88,8 +88,7 @@ val risky_driver_event_counts_DF = hiveContext.sql(
     "SELECT driverid, count(driverid) occurance " +
     "  FROM geolocation_all_temp " +
     " WHERE event != 'normal' " +
-    " GROUP BY driverid " + 
-    " ORDER BY occurance DESC")
+    " GROUP BY driverid ")
 risky_driver_event_counts_DF.registerTempTable("risky_driver_event_counts_temp")
 ```
 
@@ -104,7 +103,7 @@ NOTE: You can do this from the DataFrame API as well instead as a query.
 ```scala
 geolocation_all_DF.filter("event != 'normal'").
     groupBy("driverid").count().withColumnRenamed("count", "occurance").
-    sort($"occurance".desc).show(10)
+    show(10)
 ```
 
 Now, join the temporary table that holds the risky drivers and their
@@ -114,9 +113,9 @@ as a temporary table.
 
 ```scala
 val joined_DF = hiveContext.sql(
-    "select rd.driverid, rd.occurance, dm.totmiles " + 
-    "from risky_driver_event_counts_temp rd, driver_mileage dm " +
-    " where rd.driverid = dm.driverid")
+    "SELECT rd.driverid, rd.occurance, dm.totmiles " + 
+    "  FROM risky_driver_event_counts_temp rd, driver_mileage dm " +
+    " WHERE rd.driverid = dm.driverid")
 joined_DF.registerTempTable("joined_temp")
 ```
 Review the results of the join.
@@ -135,7 +134,7 @@ risky_driver_event_counts_DF.join(
     driver_mileage_DF, 
     risky_driver_event_counts_DF("driverid") === driver_mileage_DF("driverid"), 
     "inner").drop(driver_mileage_DF.col("driverid")).
-     sort($"occurance".desc).show(10) 
+    show(10) 
 ```
 
 ## Calculate Risk
@@ -188,7 +187,33 @@ Verify it made by querying from Hive View.
 
 ![alt text](./images/InHive.png "Hive results")
 
-
-
 ## Visualize Data
+
+In a fresh paragraph, add the following query and execute it.
+
+```scala
+%hive
+
+SELECT * FROM risk_factor_spark
+```
+
+Explore the various charts that are available from the toolbar highlighted below.
+
+![alt text](./images/ChartsToolbar.png "chart options")
+
+After clicking on _settings_ next to the toolbar, set `driverid` in the 
+_Keys_ field and `riskfactor` in the _Values_ field to see the peaks and 
+valleys of ranges amongst drivers.
+
+![alt text](./images/RiskPeaks.png "risk variations")
+
+Run another query to visualize against.
+
+```scala
+%hive
+
+SELECT r.driverid, r.riskfactor, g.city, g.state 
+  FROM risk_factor_spark r, geolocation g 
+ WHERE r.driverid = g.driverid
+```
 
