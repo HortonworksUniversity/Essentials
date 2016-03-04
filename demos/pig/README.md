@@ -11,7 +11,7 @@ Hortonworks tutorial
 
 **RECORDED DEMO**
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=eOhv60m0kkc" target="_blank"><img src="http://img.youtube.com/vi/eOhv60m0kkc/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Z2AygS5GKvI" target="_blank"><img src="http://img.youtube.com/vi/Z2AygS5GKvI/0.jpg" 
 alt="Leveraging Hive" width="240" height="180" border="10" /></a>
 
 ## Create Tables
@@ -209,7 +209,7 @@ SELECT *
  LIMIT 5;
 ```
 
-## Visualize Results
+## Visualize Data
 
 Pig does not have any native visualization tools.  You can exercise the 
 [Data Reporting with Excel](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_8 "Reporting with Excel") 
@@ -218,5 +218,5 @@ Hortonworks tutorial which can be reviewed in
 
 COTS solutions from BI tool vendors are also common ways to visualize 
 these aggregated values for many large enterprises as well as dedicated 
-Hadoop tools like Datameer are also popular.
+Hadoop tools like Datameer.
 
