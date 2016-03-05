@@ -14,7 +14,7 @@ Hortonworks tutorials:
 
 **RECORDED DEMO**
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=Z2AygS5GKvI" target="_blank"><img src="http://img.youtube.com/vi/Z2AygS5GKvI/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Z0sPzJEAZZ8" target="_blank"><img src="http://img.youtube.com/vi/Z0sPzJEAZZ8/0.jpg" 
 alt="Leveraging Hive" width="240" height="180" border="10" /></a>
 
 ## Prepare Coding Environment
@@ -227,4 +227,4 @@ This time pick the right-most icon in the toolbar select:
 ![alt text](./images/AltGraph.png "more options")
 
 This is just a quick intro to the types of visualization opportunities 
-exist with Zeppelin.
+that exist with Zeppelin.
