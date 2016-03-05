@@ -154,7 +154,7 @@ when attempting to execute `SELECT * FROM risk_factor LIMIT 100;`.
 
 ![alt text](./images/ColumnError.png "col-level secured")
 
-Verify all works correctly when select allowed columns.
+Verify all works correctly when selecting only allowed columns.
 
 ```sql
 SELECT driverid, riskfactor FROM risk_factor LIMIT 100;
