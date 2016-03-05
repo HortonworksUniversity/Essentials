@@ -13,7 +13,7 @@ Hortonworks tutorials:
 
 **RECORDED DEMO**
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=Bp96x70HpEM" target="_blank"><img src="http://img.youtube.com/vi/Bp96x70HpEM/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=nr6fmpSo6oI" target="_blank"><img src="http://img.youtube.com/vi/nr6fmpSo6oI/0.jpg" 
 alt="Streaming into HDFS" width="240" height="180" border="10" /></a>
 
 ## Use Cases
@@ -125,7 +125,7 @@ the underlying table, accordingly.
 At the beginning of the demo we created a `geo_normal_event` view that 
 the `Marketing` team can access.  Obviously, we did this ahead of time, but
 in a model where the requirement comes along after the structures are in
-place, one simple needs to create the view and then lock down access to 
+place, one simply needs to create the view and then lock down access to 
 the backing table.
 
 To satisfy this requirement with our current system, simply edit the 
