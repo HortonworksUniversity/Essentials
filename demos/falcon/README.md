@@ -16,20 +16,6 @@ Hortonworks tutorials:
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=Bp96x70HpEM" target="_blank"><img src="http://img.youtube.com/vi/Bp96x70HpEM/0.jpg" 
 alt="Streaming into HDFS" width="240" height="180" border="10" /></a>
 
-
-
-## NOTES NOTES NOTES
-
-prereq: ingestion 
-
-ensure Oozie and Falcon are are started from Ambari
-
-create folders for fake source/target hadoop clusters (as admin in ambari)
-as well as staging and working subdirectories
-
-/app/falcon  (admin/hdfs)
-
-
 ## Admin Setup
 
 As Ranger is an administrative tool, there are some initial activities that
@@ -45,7 +31,8 @@ _Create Local User_ functionality to build a `falcon` user and add them into
 the `views` group.
 
 Now log back into Ambari as `falcon` and using the HDFS Files View, create
-the following directories.
+the following directories that will be used by Falcon to stored control 
+information about the clusters.
 
 ```
 /apps/falcon/primaryCluster
@@ -68,9 +55,15 @@ Last login: Sat Mar  5 20:33:12 2016 from 10.0.2.2
 [falcon@sandbox ~]$ hdfs dfs -chmod -R 755 /apps/falcon/primaryCluster/working /apps/falcon/backupCluster/working
 ```
 
-The owner/group/permission columns should be identical to those shown below.
+Now, as `hdfs` create a directory to act as our destination cluster.
 
-![alt text](./images/Permissions.png "ownership & permissions")
+```
+[falcon@sandbox ~]$ exit
+logout
+[root@sandbox ~]# su - hdfs
+[hdfs@sandbox ~]$ hdfs dfs -mkdir /fakeDestCluster
+[hdfs@sandbox ~]$ hdfs dfs -chown -R falcon /fakeDestCluster
+```
 
 ### Define Clusters
 
@@ -107,4 +100,45 @@ Owner|falcon
 staging|/apps/falcon/backupCluster/staging
 working|/apps/falcon/backupCluster/staging
 
+## Setup Mirroring Job
 
+The plan is to create a Falcon "mirror" job to replicate the contents of
+`maria_dev`'s home directory to our (fake) destination cluster which is 
+emulated by the `/fakeDestCluster` directory.  To do this, click on the 
+_Mirror_ icon in the upper-middle of the screen that is associated with 
+the _Create an entity_ message.  Name the job `MirrorTest` and select the
+previously described `Source`/`Target` values as indicated in red below.
+
+![alt text](./images/MirrorJob.png "mirror job config")
+
+Now, verify that the start date is no later than the current date/time 
+and add an end date of a few days from now (highlighted in blue above) 
+to ensure the job will run and then click on `Next`.  After reviewing 
+the confirmation screen, click on `Save`.
+
+Now, log into Ambari as `maria_dev` and create a new `bogus` directory in
+her home directory and then load a file, or files, such as [Well.txt]
+or should that be <Well.txt>.
+
+## Run the Job
+
+In Falcon, type `MirrorTest` in the search bar at the top of the screen
+to locate the job.  Then select the checkbox next to the job and click
+the _Schedule_ button.
+
+![alt text](./images/Search.png "find the job")
+
+Notice that the job _Status_ has now changed to `RUNNING`.
+
+![alt text](./images/Running.png "job running")
+
+Then, navigate to `/fakeDestCluster` to verify that the contents of 
+`/user/maria_dev` have been mirrored.
+
+![alt text](./images/FilePreview.png "job running")
+
+Now that we verified the job has run successfully, go ahead and _Suspend_
+or _Delete_ it from the Falcon UI.
+
+NOTE: See [Falcon Cluster Management](ClusterManagement.md) for assistance
+with deleting a cluster.
