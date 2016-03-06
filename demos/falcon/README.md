@@ -13,7 +13,7 @@ Hortonworks tutorials:
 
 **RECORDED DEMO**
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=Bp96x70HpEM" target="_blank"><img src="http://img.youtube.com/vi/Bp96x70HpEM/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=ZUQp9PRqAKw" target="_blank"><img src="http://img.youtube.com/vi/ZUQp9PRqAKw/0.jpg" 
 alt="Streaming into HDFS" width="240" height="180" border="10" /></a>
 
 ## Admin Setup
