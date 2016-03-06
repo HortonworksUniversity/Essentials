@@ -117,8 +117,7 @@ to ensure the job will run and then click on `Next`.  After reviewing
 the confirmation screen, click on `Save`.
 
 Now, log into Ambari as `maria_dev` and create a new `bogus` directory in
-her home directory and then load a file, or files, such as [Well.txt]
-or should that be <Well.txt>.
+her home directory and then load a file, or files, such as [Well.txt](./Well.txt).
 
 ## Run the Job
 
