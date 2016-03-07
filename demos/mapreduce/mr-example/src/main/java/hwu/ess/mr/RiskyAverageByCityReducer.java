@@ -12,12 +12,12 @@ public class RiskyAverageByCityReducer extends Reducer<Text, Text, Text, Text> {
     @Override
     protected void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 
-		//setup counters
+        //setup counters
         int totalEvents = 0;
         int totalRisky = 0;
         String eventType = null;
 
-		//loop through all values
+        //loop through all values
         for(Text value : values) {   //loop through all values
             totalEvents++;   //update total nbr of events
             eventType = value.toString();

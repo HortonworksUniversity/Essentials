@@ -13,12 +13,11 @@ public class RiskyAverageCalculator {
 
     public static void main(String[] args) throws Exception {
     
-		if(args.length != 2) {
-			System.out.println("Usage: RiskyAverageCalculator <input dir> <output dir>");
-			System.exit(-1);
-		}    
+        if(args.length != 2) {
+            System.out.println("Usage: RiskyAverageCalculator <input dir> <output dir>");
+            System.exit(-1);
+        }    
     
-        //Configuration conf = new Configuration();
         Job job = Job.getInstance();
         job.setJobName("CtyEvntAvg");
 
@@ -31,8 +30,8 @@ public class RiskyAverageCalculator {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
 
-		FileInputFormat.setInputPaths(job, new Path(args[0]));
-		FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        FileInputFormat.setInputPaths(job, new Path(args[0]));
+        FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }

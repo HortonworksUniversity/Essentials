@@ -11,7 +11,7 @@ Hortonworks tutorial
 
 **RECORDED DEMO**
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=nr6fmpSo6oI" target="_blank"><img src="http://img.youtube.com/vi/nr6fmpSo6oI/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=cOhicJYmCd8" target="_blank"><img src="http://img.youtube.com/vi/cOhicJYmCd8/0.jpg" 
 alt="Streaming into HDFS" width="240" height="180" border="10" /></a>
 
 ## Use Case
