@@ -37,6 +37,10 @@ necessary), create/verify a new Topic.
 NOTE: You can delete this topic with `/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic truckevent` 
 **AFTER** you switch the `delete.topic.enable` value to `true` found in Ambari under _Services_ > _Kafka_ > _Configs_ > _Advanced kafka-broker_.
 
+NOTE: The following instructions about downloading, editing & building
+the source are presented to ensure the demo is reproducible, but these
+steps should be done beforehand when an instructor is presenting this demo.
+
 Then download the event generator code.
 
 ```

@@ -27,9 +27,9 @@ surely appreciated._
 
 [Ingesting Data into HDFS](./demos/ingestion/README.md)
 
-[Streaming Data into HDFS](./demos/storm/README.md)
+[Streaming Data into HDFS](./demos/storm/README.md)  _<< Time Permittting_
 
-[Foundational Processing with MapReduce](./demos/mapreduce/README.md)
+[Foundational Processing with MapReduce](./demos/mapreduce/README.md)  _<< Time Permittting_
 
 [Data Manipulation with Hive](./demos/hive/README.md)
 
@@ -37,6 +37,6 @@ surely appreciated._
 
 [Risk Analysis with Spark](./demos/spark/README.md)
 
-[Data Pipeling with Falcon](./demos/falcon/README.md)
+[Data Pipeling with Falcon](./demos/falcon/README.md)  _<< Time Permittting_
 
-[Securing Hive with Ranger](./demos/ranger/README.md)
+[Securing Hive with Ranger](./demos/ranger/README.md)  _<< Time Permittting_

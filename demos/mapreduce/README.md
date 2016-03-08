@@ -35,6 +35,10 @@ risk events for the city.  It will bundle these statistics together as the
 
 ## Build Source Code
 
+NOTE: The following instructions about creating, editing & building
+the source are presented to ensure the demo is reproducible, but these
+steps should be done beforehand when an instructor is presenting this demo.
+
 Create and HDFS home directory for `it1` and then construct the local 
 Linux folders that will house the MapReduce source code.
 
