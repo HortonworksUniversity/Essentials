@@ -122,6 +122,15 @@ of counters, to indicate a successful completion.
 16/03/07 05:44:57 INFO mapreduce.Job: Counters: 49
 ```
 
+Verify the job ran successfully and that the `Reducer`'s output is present.
+
+```
+[it1@sandbox mr-example]$ hdfs dfs -ls avg-output
+Found 2 items
+-rw-r--r--   3 it1 hdfs          0 2016-03-07 06:16 avg-output/_SUCCESS
+-rw-r--r--   3 it1 hdfs       2026 2016-03-07 06:16 avg-output/part-r-00000
+```
+
 Type `hdfs dfs -cat avg-output/part-r-00000` to view the job output which
 should **begin** with _something_ like the following.
 
