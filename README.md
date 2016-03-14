@@ -25,7 +25,7 @@ surely appreciated._
 
 [Operational Overview with Ambari](./demos/ambari/README.md)
 
-[Ingesting Data into HDFS](./demos/ingestion/README.md)
+[Loading Data into HDFS](./demos/hdfs/README.md)
 
 [Streaming Data into HDFS](./demos/storm/README.md)  _<< Time Permittting_
 

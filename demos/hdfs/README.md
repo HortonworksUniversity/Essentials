@@ -1,4 +1,4 @@
-# Ingesting Data into HDFS
+# Loading Data into HDFS
 
 **GOAL** - Load sample trucking data into HDFS for use by subsequent demos
 
