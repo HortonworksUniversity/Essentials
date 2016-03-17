@@ -3,7 +3,7 @@
 **GOAL** - Build and execute a simple MapReduce job to calculate the 
 percentage of risky events by city
 
-**PREREQUISITE** - [Ingesting Data into HDFS](../ingestion/README.md)
+**PREREQUISITE** - [Loading Data into HDFS](../hdfs/README.md)
 
 **SEE ALSO** - This demo is based on the publicly-available 
 [Introducing Apache Hadoop to Java Developers](http://hortonworks.com/hadoop-tutorial/introducing-apache-hadoop-developers/ "Tutorial: Hadoop Intro to Java Developers") 
@@ -17,7 +17,7 @@ alt="Streaming into HDFS" width="240" height="180" border="10" /></a>
 ## Use Case
 
 The input file for the MapReduce job is `/user/maria_dev/geolocation/geolocation.csv` that was loaded in the 
-[Ingesting Data into HDFS](../ingestion/README.md) tutorial. Among other
+[Loading Data into HDFS](../hdfs/README.md) tutorial. Among other
 data elements, the record definition includes an event type and the city
 where the event occurred.
 

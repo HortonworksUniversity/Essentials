@@ -3,7 +3,7 @@
 **GOAL** - Create, populate and perform manipulations with
 Hive tables
 
-**PREREQUISITE** - [Ingesting Data into HDFS](../ingestion/README.md)
+**PREREQUISITE** - [Loading Data into HDFS](../hdfs/README.md)
 
 **SEE ALSO** - This demo is based on the publicly-available 
 [Hive and Data ETL](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_4 "Hive and Data ETL") 

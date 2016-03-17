@@ -3,7 +3,7 @@
 **GOAL** - Use Falcon to mirror directories from a source to a target cluster 
 via Ranger
 
-**PREREQUISITE** - [Ingesting Data into HDFS](../ingestion/README.md)
+**PREREQUISITE** - [Loading Data into HDFS](../hdfs/README.md)
 
 **SEE ALSO** - This demo is based on these two publicly-available 
 Hortonworks tutorials:
