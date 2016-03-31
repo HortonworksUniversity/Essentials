@@ -213,10 +213,9 @@ SELECT *
 
 ## Visualize Data
 
-Pig does not have any native visualization tools.  You can exercise the 
+Pig does not have any native visualization tools, but you can exercise the 
 [Data Reporting with Excel](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_7 "Reporting with Excel") 
-Hortonworks tutorial which can be reviewed in 
-[this video](http://hortonworks.com/hadoop-tutorial/geolocation-data-profit-from-predictive-analytics/ "Excel Visualizations").
+Hortonworks tutorial.
 
 COTS solutions from BI tool vendors are also common ways to visualize 
 these aggregated values for many large enterprises as well as dedicated 

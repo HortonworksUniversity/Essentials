@@ -1,7 +1,7 @@
 # Falcon Cluster Management
 
 While the Falcon UI can be used to find/manage processes such as `MirrorTest`
-created in [Data Pipelining with Falcon](README.md), it currently does not
+created in [Data Backup with Falcon](README.md), it currently does not
 offer a rich set of tools to manage Hadoop clusters beyond the helpful "add
 cluster" wizard UI component.  
 
