@@ -16,6 +16,8 @@ Hortonworks tutorials:
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=ZUQp9PRqAKw" target="_blank"><img src="http://img.youtube.com/vi/ZUQp9PRqAKw/0.jpg" 
 alt="Streaming into HDFS" width="240" height="180" border="10" /></a>
 
+**PRIOR DEMO CLEANUP** - [Cleanup](./CleanUp.md)
+
 ## Admin Setup
 
 As Ranger is an administrative tool, there are some initial activities that
@@ -80,7 +82,7 @@ Name|primaryCluster
 Colo|primaryColo
 Owner|falcon
 staging|/apps/falcon/primaryCluster/staging
-working|/apps/falcon/primaryCluster/staging
+working|/apps/falcon/primaryCluster/working
 
 You can see the location of these required KVPs in the next screenshot.
 
@@ -98,7 +100,7 @@ Name|backupCluster
 Colo|backupColo
 Owner|falcon
 staging|/apps/falcon/backupCluster/staging
-working|/apps/falcon/backupCluster/staging
+working|/apps/falcon/backupCluster/working
 
 ## Setup Mirroring Job
 

@@ -14,6 +14,8 @@ Hortonworks tutorial
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=eOhv60m0kkc" target="_blank"><img src="http://img.youtube.com/vi/eOhv60m0kkc/0.jpg" 
 alt="Leveraging Hive" width="240" height="180" border="10" /></a>
 
+**PRIOR DEMO CLEANUP** - [Cleanup](./CleanUp.md)
+
 ## Create Tables
 
 As `maria_dev` log into Ambari and navigate to the HDFS Files Ambari View to

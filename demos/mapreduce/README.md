@@ -14,6 +14,8 @@ Hortonworks tutorial
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=cOhicJYmCd8" target="_blank"><img src="http://img.youtube.com/vi/cOhicJYmCd8/0.jpg" 
 alt="Streaming into HDFS" width="240" height="180" border="10" /></a>
 
+**PRIOR DEMO CLEANUP** - [Cleanup](./CleanUp.md)
+
 ## Use Case
 
 The input file for the MapReduce job is `/user/maria_dev/geolocation/geolocation.csv` that was loaded in the 

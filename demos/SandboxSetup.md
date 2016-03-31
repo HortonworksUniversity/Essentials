@@ -46,20 +46,3 @@ Ambari Server 'start' completed successfully.
 
 It is suggested that you set the `admin` Ambari user's password
 to `admin` for consistency with the other web UIs.
-
-## Allow Access to Tez View
-
-Once logged into Ambari as `admin`, click on:
-
-* Pulldown in upper-right corner that has user name in it and select _Manage Ambari_
-* _Manage Permissions_ button
-* _Views_ link in the _Views_ widget on left-side nav
-* _TEZ_ item in _View Name_ column
-* _Tez View_ link that became visible
-
-Then in the _Permissions_ widget box click inside the grey box
-underneath the _Grant permissions to these groups_ text which
-will then allow you to add the `views` group.  This should look like
-the following screenshot (click on the _blue checkbox_ to save).
-
-![alt text](./GrantView.png "grant access")

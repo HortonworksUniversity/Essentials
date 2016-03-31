@@ -16,11 +16,13 @@ Hortonworks tutorials:
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=nr6fmpSo6oI" target="_blank"><img src="http://img.youtube.com/vi/nr6fmpSo6oI/0.jpg" 
 alt="Streaming into HDFS" width="240" height="180" border="10" /></a>
 
+**PRIOR DEMO CLEANUP** - [Cleanup](./CleanUp.md)
+
 ## Use Cases
 
 The Sandbox is provisioned with a user group called `Marketing` which is made up
 of the following individual user accounts; `mktg1`, `mktg2` and `mktg3`. The 
-following **_"prevent `Marketing` users from access to access ..."_** restrictive
+following **_"prevent `Marketing` users from accessing ..."_** restrictive
 use cases will be explored in this demo.
 
 Type | Specifics
@@ -100,6 +102,9 @@ Access to Trucking" that is configured to allow access to all tables in
 the `default` database except for the "staging" ones.
 
 ![alt text](./images/BasePolicy.png "base policy")
+
+NOTE: The configurable value for the policy refresh is 30 seconds, so 
+keep trying until new rules are accessible via Hive.
 
 Now, back in Ambari's Hive View, the `mktg1` user can retrieve results 
 for `show tables;` as well as see the list of tables in the _Databases_ UI

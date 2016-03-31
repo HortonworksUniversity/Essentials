@@ -13,6 +13,8 @@ administering a Hadoop cluster
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=AWRMQmLmuMk" target="_blank"><img src="http://img.youtube.com/vi/AWRMQmLmuMk/0.jpg" 
 alt="Ops with Ambari" width="240" height="180" border="10" /></a>
 
+**PRIOR DEMO CLEANUP** - None
+
 ## Ambari's Role
 
 [Apache Ambari](http://ambari.apache.org/ "Ambari") aids very specifically with the following areas for a Hadoop cluster
@@ -28,10 +30,10 @@ alt="Ops with Ambari" width="240" height="180" border="10" /></a>
 
 A quick way to get a feel for the LOE involved in manually configuring
 a Hadoop cluster is to look at the activities required.  The 
-[Manual Installation Guide](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.4/bk_installing_manually_book/bk_installing_manually_book-20151221.pdf "Manual Install")
+[Manual Installation Guide](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.4.0/bk_installing_manually_book/bk_installing_manually_book-20160301.pdf "Manual Install")
 devotes almost 200 pages to this, while the comparable 
 operations in the 
-[Ambari Installation Guide](http://docs.hortonworks.com/HDPDocuments/Ambari-2.2.0.0/bk_Installing_HDP_AMB/bk_Installing_HDP_AMB-20151221.pdf "Ambari Install")
+[Ambari Installation Guide](http://docs.hortonworks.com/HDPDocuments/Ambari-2.2.1.0/bk_Installing_HDP_AMB/bk_Installing_HDP_AMB-20160301.pdf "Ambari Install")
 span about 15 pages.
 
 While both approaches require HW & OS prep activities, the Ambari route

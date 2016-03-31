@@ -17,6 +17,8 @@ Hortonworks tutorials:
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=Z0sPzJEAZZ8" target="_blank"><img src="http://img.youtube.com/vi/Z0sPzJEAZZ8/0.jpg" 
 alt="Leveraging Hive" width="240" height="180" border="10" /></a>
 
+**PRIOR DEMO CLEANUP** - [Cleanup](./CleanUp.md)
+
 ## Prepare Coding Environment
 
 As directed from the Sandbox _Splash Page_, open Zeppelin by navigating your 
@@ -106,6 +108,12 @@ geolocation_all_DF.filter("event != 'normal'").
     show(10)
 ```
 
+NOTE: To conserve resources in the notebook, use the "Clear Output" functionality
+that is available by clicking on the gear icon in upper-right corner of this
+paragraph and then selecting "Clear Output" as shown in the following screenshot.
+
+![alt text](./images/ClearOutput.png "clear output")
+
 Now, join the temporary table that holds the risky drivers and their
 counts with Hive's `driver_mileage` table created in 
 [Risk Analysis with Pig](../pig/README.md), then store that DataFrame
@@ -137,6 +145,8 @@ risky_driver_event_counts_DF.join(
     show(10) 
 ```
 
+NOTE: As before, use the "Clear Output" functionality on this unwanted paragraph.
+
 ## Calculate Risk
 
 Create a new DataFrame than contains, by driver, the risk calculation of 
@@ -162,7 +172,8 @@ hiveContext.sql(
     "STORED AS ORC")
 ```
 
-Verify from the Hive View this table has been created and is empty.
+Verify from the Hive View (logged in as `admin` is fine) this table has been 
+created and is empty.
 
 Since we created this table to be backed by the ORC file format, we need
 to persist `risk_factor_calc_DF` to disk in that format.
@@ -207,7 +218,11 @@ valleys of ranges amongst drivers.
 
 ![alt text](./images/RiskPeaks.png "risk variations")
 
-Run another query to visualize against.
+NOTE: Prior to running the next query, especially on the Sandbox, it is advised to
+review using Ambari to stop and start services.  Ideally, shutdown Zeppellin and 
+then Spark and start them up in reverse order.
+
+Run another query to visualize against after creating a new notebook.
 
 ```scala
 %hive

@@ -14,6 +14,8 @@ Hortonworks tutorial
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=Z2AygS5GKvI" target="_blank"><img src="http://img.youtube.com/vi/Z2AygS5GKvI/0.jpg" 
 alt="Leveraging Hive" width="240" height="180" border="10" /></a>
 
+**PRIOR DEMO CLEANUP** - [Cleanup](./CleanUp.md)
+
 ## Create Tables
 
 The diagram below indicates the steps we have taken in the Hive demo as well
