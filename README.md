@@ -39,4 +39,4 @@ surely appreciated._
 
 [Data Backup with Falcon](./demos/falcon/README.md)  _<< Time Permittting_
 
-[Securing Hive with Ranger](./demos/ranger/README.md)  _<< Time Permittting_
+[Securing Hive with Ranger](./demos/ranger/README.md) 
