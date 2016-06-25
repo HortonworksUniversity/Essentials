@@ -1,6 +1,6 @@
 # Hortonworks Sandbox Setup
 
-This project utilizes the VirtualBox edition of the HDP 2.4 
+This project utilizes the VirtualBox edition of the HDP 2.4 (ver3) 
 [Hortonworks Sandbox](http://hortonworks.com/products/hortonworks-sandbox/ "Hortonworks Sandbox").
 
 ## Setup Passwords

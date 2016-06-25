@@ -17,7 +17,7 @@ alt="Ingesting into HDFS" width="240" height="180" border="10" /></a>
 
 ## Data Files
 
-For all the demos in this Essentials course, we are focused on a trucking company example.  Save the [Geolocation.zip](./Geolocation.zip) file to your
+For all the demos in this Essentials course, we are focused on a trucking company example.  Save the [Geolocation.zip](./Geolocation.zip?raw=true) file to your
 local disk drive and unzip it.  You should now find the following files.
 
 * **geolocation.csv** – This is the collected geolocation data from the trucks. it contains records showing truck location, date, time, type of event, speed, etc.
