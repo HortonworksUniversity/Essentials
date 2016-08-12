@@ -3,7 +3,7 @@
 This GitHub project stores content related to the [Hadoop Essentials](http://hortonworks.com/training/class/hadoop-essentials/ "Hadoop Essentials")
 course offering from Hortonworks Univeristy.
 
-Status: Under Development
+Status: Complete
 
 ## Approach & Setup
 

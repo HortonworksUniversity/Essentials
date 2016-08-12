@@ -1,7 +1,7 @@
 # Hortonworks Sandbox Setup
 
-This project utilizes the VirtualBox edition of the HDP 2.4 (ver3) 
-[Hortonworks Sandbox](http://hortonworks.com/products/hortonworks-sandbox/ "Hortonworks Sandbox").
+These demos were last tested with the VirtualBox edition of the 
+[Hortonworks Sandbox](http://hortonworks.com/products/hortonworks-sandbox/ "Hortonworks Sandbox") for HDP 2.4 (ver3).
 
 ## Setup Passwords
 

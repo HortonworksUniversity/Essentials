@@ -45,14 +45,14 @@ While the [Sandbox Setup](../SandboxSetup.md) that we are using already
 has an installed version of HDP, you can get a sense of this install wizard
 by starting the process of adding a new service.  Click on _Actions_ > 
 _Add Service_ > _Accumulo_ > _Next_ to see something like presented in the
-[Add Service Wizard](./images/AddServiceWizard.png) screenshot.
+[Add Service Wizard](./images/AddServiceWizard.png?raw=true) screenshot.
 
 **_Be sure to exit out of this wizard to prevent service form attempting
 to be installed._**
 
 ## Configuration
 
-As visualized in this [figurative example](./images/HadoopFiles.png), Hadoop installation files get spread across the file system and across all the nodes
+As visualized in this [figurative example](./images/HadoopFiles.png?raw=true), Hadoop installation files get spread across the file system and across all the nodes
 in the cluster.  Installation with Ambari ensures all get to the right place
 and subsequent configuration changes with Ambari also ensures appropriate, 
 primarily XML, files are accurate updated as well as guides the operator 
