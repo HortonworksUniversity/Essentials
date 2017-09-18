@@ -30,10 +30,10 @@ alt="Ops with Ambari" width="240" height="180" border="10" /></a>
 
 A quick way to get a feel for the LOE involved in manually configuring
 a Hadoop cluster is to look at the activities required.  The 
-[Manual Installation Guide](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.4.0/bk_installing_manually_book/bk_installing_manually_book-20160301.pdf "Manual Install")
+[Manual Installation Guide](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.2/bk_command-line-installation/bk_command-line-installation.pdf "Manual Install")
 devotes almost 200 pages to this, while the comparable 
 operations in the 
-[Ambari Installation Guide](http://docs.hortonworks.com/HDPDocuments/Ambari-2.2.1.0/bk_Installing_HDP_AMB/bk_Installing_HDP_AMB-20160301.pdf "Ambari Install")
+[Ambari Installation Guide](https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.2.0/bk_ambari-installation/bk_ambari-installation.pdf "Ambari Install")
 span about 15 pages.
 
 While both approaches require HW & OS prep activities, the Ambari route
