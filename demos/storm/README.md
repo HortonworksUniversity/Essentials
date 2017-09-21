@@ -1,5 +1,11 @@
 # Streaming Data into HDFS
 
+---
+
+_**NOTE:**_ This lab has **NOT** been tested since the [HDP 2.4 version of this course](https://github.com/HortonworksUniversity/Essentials/tree/Sandbox-2.4 "Ess for HDP 2.4") and is being deprecated from the Essentials demo list. 
+
+---
+
 **GOAL** - Load sample trucking data into HDFS and HBase via a real-time
 data streaming workflows
 
