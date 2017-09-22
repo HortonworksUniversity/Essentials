@@ -49,6 +49,26 @@ CREATE VIEW geo_normal_event AS
 Ensure results are returned `SELECT * FROM geo_normal_event LIMIT 100;`
 is executed. 
 
+### Create HDFS Home Directory
+
+Unfortunately, the HDFS home directory for the `Marketing` users are not created.  Using a
+[simple user provisioning process](https://martin.atlassian.net/wiki/x/B4D_AQ), 
+run the following steps to create a home directory for `mktg` 
+(we will not be using the other accounts in this demo).
+
+```
+HW13005:~ lmartin$ ssh root@127.0.0.1 -p 2222
+root@127.0.0.1's password: 
+Last login: Fri Sep 22 14:59:22 2017 from 10.0.2.2
+[root@sandbox ~]# su - hdfs
+[hdfs@sandbox ~]$ hdfs dfs -mkdir /user/mktg1
+[hdfs@sandbox ~]$ hdfs dfs -chown mktg1 /user/mktg1
+[hdfs@sandbox ~]$ exit
+logout
+[root@sandbox ~]# 
+```
+
+
 ### Allow Marketing to use Ambari
 
 The `Marketing` users are already created on the underlying Linux system, but
@@ -58,14 +78,15 @@ select _Manage Ambari_ > _Users_ > _Create Local User_ and then create accounts
 for `mktg1`, `mktg2` and `mktg3` (set password to `password` for all three) 
 which should look like the following.
 
-![alt text](./images/CreateUser.png "create user")
+![Create User](./images/CreateUser.png "create user")
 
-After creating the third user, click on the _Groups_ link in the left-side 
-_User + Group Management_ UI widget to view the list of groups.  Click on the
-_views_ group which will expose a _Local Members_ box where you can add the
-three `Marketing~ users to and should look like the following.
+After creating the third user, click on the _Views_ link in the left-side _Views_ UI widget to see the list of views.  Then toggle the _Hive_ view and click on _Hive View_ as highlighted below.
 
-![alt text](./images/ViewsMembership.png "views membership")
+![Hive View](./images/SelectHiveView.png "select view")
+
+Scoll down to the _Permissions_ widget and add the three `mktgN` users as seen in the next screenshot.
+
+![Set Users](./images/SetUsers.png "set users")
 
 ### Disable Hive Global Access
 
@@ -121,7 +142,8 @@ on one of the staging tables to verify a security error is presented.
 GOAL: **_Prevent `Marketing` users from accessing rows from `geolocation` 
 table when the `event` column has a value other than `normal`_** 
 
-Row-level security is not an intrinsic feature of Hive yet, but as this 
+Row-level security is not an intrinsic feature of Hive yet, but Ranger does offer [row-level filtering](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.2/bk_security/content/ranger_row_level_filtering_and_column_masking_in_hive.html).  
+As this 
 [HCC discussion](https://community.hortonworks.com/questions/1156/what-is-the-best-way-to-implement-row-based-securi.html "HCC discussion") indicates, the common
 approach to this need is to create a Hive View that selects only the data
 that you want to grant/restrict access to and then secure the View, and 
@@ -139,7 +161,7 @@ along with the staging tables being restricted.
 
 ![alt text](./images/RestrictGeolocation.png "restrict geolocation")
 
-To verify, ensure `mktg2` can select from `geo_normal_event`, but not from `geolocation`.
+To verify, ensure `mktg1` can select from `geo_normal_event`, but not from `geolocation`.
 
 ![alt text](./images/GeolocationError.png "geolocation secured")
 
@@ -154,7 +176,7 @@ would be restricted from any table).
 
 ![alt text](./images/ColumnSecurity.png "column-level config")
 
-To verify, log into Ambari as `mktg3` and verify the following message surfaces 
+To verify, log into Ambari as `mktg1` and verify the following message surfaces 
 when attempting to execute `SELECT * FROM risk_factor LIMIT 100;`.
 
 ![alt text](./images/ColumnError.png "col-level secured")

@@ -6,7 +6,7 @@ via HCatalog to calculate risk factors for drivers
 **PREREQUISITE** - [Data Manipulation with Hive](../hive/README.md)
 
 **SEE ALSO** - This demo is based on the publicly-available 
-[Pig Risk Factor Analysis](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_5 "Calculating Risk with Pig") 
+[Pig Risk Factor Analysis](https://hortonworks.com/tutorial/hadoop-tutorial-getting-started-with-hdp/section/4/ "Pig - Risk Factor") 
 Hortonworks tutorial
 
 **RECORDED DEMO**
@@ -201,7 +201,7 @@ the upper-right corner of the screen.  Once
 the job completes successfully you will not see any output as it is stored in
 the `risk_factor` Hive table.
 
-Navigate to the Hive View and find the five drivers with the worst calculated
+Navigate to the Hive View 2.0 and find the five drivers with the worst calculated
 risk factors.
 
 ```sql
@@ -211,10 +211,12 @@ SELECT *
  LIMIT 5;
 ```
 
+Also, showcase the _Visual Explain_ and _Tez UI_ tabs that are alongside the _Results_ one.
+
 ## Visualize Data
 
 Pig does not have any native visualization tools, but you can exercise the 
-[Data Reporting with Excel](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_7 "Reporting with Excel") 
+[Data Reporting with Excel](https://hortonworks.com/tutorial/hadoop-tutorial-getting-started-with-hdp/section/7/ "Data Reporting with Excel") 
 Hortonworks tutorial.
 
 COTS solutions from BI tool vendors are also common ways to visualize 

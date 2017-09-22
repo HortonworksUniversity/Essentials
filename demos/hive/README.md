@@ -6,7 +6,7 @@ Hive tables
 **PREREQUISITE** - [Loading Data into HDFS](../hdfs/README.md)
 
 **SEE ALSO** - This demo is based on the publicly-available 
-[Hive and Data ETL](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_4 "Hive and Data ETL") 
+[Hive and Data ETL](https://hortonworks.com/tutorial/hadoop-tutorial-getting-started-with-hdp/section/3/ "Hive - Data ETL") 
 Hortonworks tutorial
 
 **RECORDED DEMO**
@@ -17,6 +17,8 @@ alt="Leveraging Hive" width="240" height="180" border="10" /></a>
 **PRIOR DEMO CLEANUP** - [Cleanup](./CleanUp.md)
 
 ## Create Tables
+
+NOTE: All testing and screen shots were done with the "original" Hive View, not the 2.0 version available in HDP 2.6 onward.
 
 As `maria_dev` log into Ambari and navigate to the HDFS Files Ambari View to
 review the previously uplodaded files in `/user/maria_dev/geolocation` that we
@@ -181,6 +183,8 @@ are outside the scope of this demonstration.
   * DAG Details (including download option)
   * DAG Counters 
   * Graphical View
+
+NOTE: This last query is a good one to show the Hive View 2.0 features such as the new _Visual Explain_ feature.
 
 Return to the Hive Ambari View and loading the stored query and then wrapping it 
 as a CTAS to stored these calculated values for faster consumption and manipulation.

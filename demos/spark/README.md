@@ -9,8 +9,8 @@ results as [Risk Analysis with Pig](../pig/README.md)_
 **SEE ALSO** - This demo is based on these two publicly-available 
 Hortonworks tutorials:
 
-* [Spark Risk Factor Analysis](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_6 "Calculating Risk with Spark") 
-* [Data Visualization using Apache Zeppelin](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_7 "Visualizing with Zeppelin") 
+* [Spark Risk Factor Analysis](https://hortonworks.com/tutorial/hadoop-tutorial-getting-started-with-hdp/section/5/ "Spark - Risk Factor") 
+* [Data Visualization using Apache Zeppelin](https://hortonworks.com/tutorial/hadoop-tutorial-getting-started-with-hdp/section/6/ "Data Reporting with Zeppelin") 
 
 **RECORDED DEMO**
 
@@ -76,7 +76,7 @@ geolocation_all_DF.show(10)
 Register this DataFrame so it can be used within SQL statements.
 
 ```scala
-geolocation_all_DF.registerTempTable("geolocation_all_temp")
+geolocation_all_DF.createTempView("geolocation_all_temp")
 ```
 
 ## Transform/Process Data
@@ -91,7 +91,7 @@ val risky_driver_event_counts_DF = hiveContext.sql(
     "  FROM geolocation_all_temp " +
     " WHERE event != 'normal' " +
     " GROUP BY driverid ")
-risky_driver_event_counts_DF.registerTempTable("risky_driver_event_counts_temp")
+risky_driver_event_counts_DF.createTempView("risky_driver_event_counts_temp")
 ```
 
 Review these results.
@@ -124,7 +124,7 @@ val joined_DF = hiveContext.sql(
     "SELECT rd.driverid, rd.occurance, dm.totmiles " + 
     "  FROM risky_driver_event_counts_temp rd, driver_mileage dm " +
     " WHERE rd.driverid = dm.driverid")
-joined_DF.registerTempTable("joined_temp")
+joined_DF.createTempView("joined_temp")
 ```
 Review the results of the join.
 
@@ -157,7 +157,7 @@ as a temporary table and dump the contents to the notebook.
 val risk_factor_calc_DF = hiveContext.sql(
     "SELECT driverid, occurance, totmiles, totmiles/occurance riskfactor " +
     "  FROM joined_temp")
-risk_factor_calc_DF.registerTempTable("risk_factor_calc_DF")
+risk_factor_calc_DF.createTempView("risk_factor_calc_DF")
 risk_factor_calc_DF.show(20)
 ```
 
@@ -202,8 +202,8 @@ Verify it made by querying from Hive View.
 
 In a fresh paragraph, add the following query and execute it.
 
-```scala
-%hive
+```sql
+%sql
 
 SELECT * FROM risk_factor_spark
 ```
@@ -212,20 +212,20 @@ Explore the various charts that are available from the toolbar highlighted below
 
 ![alt text](./images/ChartsToolbar.png "chart options")
 
-After clicking on _settings_ next to the toolbar, set `driverid` in the 
+Choose the _Bar Chart_ icon, click on _settings_ next to the toolbar, and then set `driverid` in the 
 _Keys_ field and `riskfactor` in the _Values_ field to see the peaks and 
 valleys of ranges amongst drivers.
 
 ![alt text](./images/RiskPeaks.png "risk variations")
 
-NOTE: Prior to running the next query, especially on the Sandbox, it is advised to
-review using Ambari to stop and start services.  Ideally, shutdown Zeppellin and 
+NOTE: As before, click on "Click Output" to free up visual space and system resources.  Additionally (especially on prior versions of the Sandbox), it may become necessary to
+use Ambari to stop and start services.  Ideally, shutdown Zeppellin and 
 then Spark and start them up in reverse order.
 
 Run another query to visualize against after creating a new notebook.
 
-```scala
-%hive
+```sql
+%sql
 
 SELECT r.driverid, r.riskfactor, g.city, g.state 
   FROM risk_factor_spark r, geolocation g 
