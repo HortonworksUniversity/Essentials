@@ -218,7 +218,7 @@ valleys of ranges amongst drivers.
 
 ![alt text](./images/RiskPeaks.png "risk variations")
 
-NOTE: As before, click on "Click Output" to free up visual space and system resources.  Additionally (especially on prior versions of the Sandbox), it may become necessary to
+NOTE: As before, click on "Clear output" to free up visual space and system resources.  Additionally (especially on prior versions of the Sandbox), it may become necessary to
 use Ambari to stop and start services.  Ideally, shutdown Zeppellin and 
 then Spark and start them up in reverse order.
 

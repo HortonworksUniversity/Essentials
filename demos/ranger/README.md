@@ -142,8 +142,7 @@ on one of the staging tables to verify a security error is presented.
 GOAL: **_Prevent `Marketing` users from accessing rows from `geolocation` 
 table when the `event` column has a value other than `normal`_** 
 
-Row-level security is not an intrinsic feature of Hive yet, but Ranger does offer [row-level filtering](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.2/bk_security/content/ranger_row_level_filtering_and_column_masking_in_hive.html).  
-As this 
+Row-level security is not an intrinsic feature of Hive yet, but Ranger does offer [row-level filtering](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.2/bk_security/content/ranger_row_level_filtering_and_column_masking_in_hive.html).  As this 
 [HCC discussion](https://community.hortonworks.com/questions/1156/what-is-the-best-way-to-implement-row-based-securi.html "HCC discussion") indicates, the common
 approach to this need is to create a Hive View that selects only the data
 that you want to grant/restrict access to and then secure the View, and 

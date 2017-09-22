@@ -7,7 +7,7 @@ These demos were last tested with the VirtualBox edition of the
 
 NOTE: If a more recent version is present you will likely need to naviagate to the "Hortonworks Sandbox Archive" section to find this version. 
 
-Demos were tested with setting VirtualBox RAM settings to 10240 MB (up from 8192 MB).
+Demos were tested with setting VirtualBox RAM to 10240 MB (up from 8192 MB).
 
 ## Setup Passwords
 
