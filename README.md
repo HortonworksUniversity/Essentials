@@ -1,7 +1,7 @@
-# Hadoop Essentials
+# Hadoop Essentials (Hortonworks Sandbox HDP 2.6.1)
 
 This GitHub project stores content related to the [Hadoop Essentials](http://hortonworks.com/training/class/hadoop-essentials/ "Hadoop Essentials")
-course offering from Hortonworks Univeristy.
+course offering from Hortonworks University which is available for cost in an instructor-led format and FREE for self-paced students.
 
 Status: Complete
 
@@ -27,16 +27,10 @@ surely appreciated._
 
 [Loading Data into HDFS](./demos/hdfs/README.md)
 
-[Streaming Data into HDFS](./demos/storm/README.md)  _<< Time Permittting_
-
-[Foundational Processing with MapReduce](./demos/mapreduce/README.md)  _<< Time Permittting_
-
 [Data Manipulation with Hive](./demos/hive/README.md)
 
 [Risk Analysis with Pig](./demos/pig/README.md)
 
 [Risk Analysis with Spark](./demos/spark/README.md)
-
-[Data Backup with Falcon](./demos/falcon/README.md)  _<< Time Permittting_
 
 [Securing Hive with Ranger](./demos/ranger/README.md) 

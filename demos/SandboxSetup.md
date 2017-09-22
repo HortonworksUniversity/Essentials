@@ -1,16 +1,20 @@
 # Hortonworks Sandbox Setup
 
 These demos were last tested with the VirtualBox edition of the 
-[Hortonworks Sandbox](http://hortonworks.com/products/hortonworks-sandbox/ "Hortonworks Sandbox") for HDP 2.4 (ver3).
+[Hortonworks Sandbox](http://hortonworks.com/products/hortonworks-sandbox/ "Hortonworks Sandbox") for HDP 2.6.1 as shown in the following screenshot.
+
+![alt text](Sandbox2.6.1.png "2.6.1 Checksum")
+
+NOTE: If a more recent version is present you will likely need to naviagate to the "Hortonworks Sandbox Archive" section to find this version. 
+
+Demos were tested with setting VirtualBox RAM settings to 10240 MB (up from 8192 MB).
 
 ## Setup Passwords
 
-As documented on the <http://127.0.0.1:8888> _splash screen_, you will need
-to follow the instructions shown after clicking on the _View Advanced Options_ 
-to enable the `admin` user to log into the Ambari console at 
+After visiting the <http://127.0.0.1:8888> _splash screen_, you will need click on the _Quick Links_ button under the _Advanced HDP_ section to get to the _Advanced HDP Quick Links_ page which presents instructions to enable the `admin` user to log into the Ambari console at 
 <http://127.0.0.1:8080>.  Below is an output of what that activity should 
 look like.  NOTE: The initial `root` password is `hadoop`, but you are 
-required to change it. 
+required to change it. I suggest setting it to `Hortonworks`.
 
 ```
 HW10653-2:~ lmartin$ ssh root@127.0.0.1 -p 2222
@@ -24,24 +28,21 @@ Retype new password:
 [root@sandbox ~]# ambari-admin-password-reset
 Please set the password for admin: 
 Please retype the password for admin: 
-
 The admin password has been set.
 Restarting ambari-server to make the password change effective...
-
-Using python  /usr/bin/python2
+Using python  /usr/bin/python
 Restarting ambari-server
-Using python  /usr/bin/python2
-Stopping ambari-server
+Waiting for server stop...
 Ambari Server stopped
-Using python  /usr/bin/python2
-Starting ambari-server
 Ambari Server running with administrator privileges.
 Organizing resource files at /var/lib/ambari-server/resources...
+Ambari database consistency check started...
 Server PID at: /var/run/ambari-server/ambari-server.pid
 Server out at: /var/log/ambari-server/ambari-server.out
 Server log at: /var/log/ambari-server/ambari-server.log
-Waiting for server start....................
-Ambari Server 'start' completed successfully.
+Waiting for server start...................................
+Server started listening on 8080
+DB configs consistency check: no errors and warnings were found.
 ```
 
 It is suggested that you set the `admin` Ambari user's password

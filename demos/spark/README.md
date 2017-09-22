@@ -10,7 +10,7 @@ results as [Risk Analysis with Pig](../pig/README.md)_
 Hortonworks tutorials:
 
 * [Spark Risk Factor Analysis](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_6 "Calculating Risk with Spark") 
-* [Data Visualization using Apache Zeppelin](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_8 "Visualizing with Zeppelin") 
+* [Data Visualization using Apache Zeppelin](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/#section_7 "Visualizing with Zeppelin") 
 
 **RECORDED DEMO**
 

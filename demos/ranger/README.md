@@ -70,7 +70,7 @@ three `Marketing~ users to and should look like the following.
 ### Disable Hive Global Access
 
 As identified in the Sandbox splash page, open a browser on the Ranger UI at
-<http://127.0.0.1:6080> and login with `admin` / `admin` credentials.  Select
+<http://127.0.0.1:6080> and login with `raj_ops` / `raj_ops` credentials.  Select
 the _Sandbox_hive_ link and then click on _Policy ID_ link associated with 
 the "Hive Global Tables Allow" policy from the list.
 

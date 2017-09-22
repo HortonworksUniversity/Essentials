@@ -30,11 +30,11 @@ alt="Ops with Ambari" width="240" height="180" border="10" /></a>
 
 A quick way to get a feel for the LOE involved in manually configuring
 a Hadoop cluster is to look at the activities required.  The 
-[Manual Installation Guide](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.4.0/bk_installing_manually_book/bk_installing_manually_book-20160301.pdf "Manual Install")
-devotes almost 200 pages to this, while the comparable 
+[Manual Installation Guide](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.2/bk_command-line-installation/bk_command-line-installation.pdf "Manual Install")
+devotes over 250 pages to this, while the comparable 
 operations in the 
-[Ambari Installation Guide](http://docs.hortonworks.com/HDPDocuments/Ambari-2.2.1.0/bk_Installing_HDP_AMB/bk_Installing_HDP_AMB-20160301.pdf "Ambari Install")
-span about 15 pages.
+[Ambari Installation Guide](https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.2.0/bk_ambari-installation/bk_ambari-installation.pdf "Ambari Install")
+span about 25 pages.
 
 While both approaches require HW & OS prep activities, the Ambari route
 quickly differs by only needing two quick CLI operations, 
@@ -79,7 +79,7 @@ before reverting back to the prior version.
 ## Expansion
 
 Ambari shines when it is time to grow your cluster with additional nodes.  It
-already has all the bits to distrubute and intellegently deploys all required
+already has all the bits to distribute and intelligently deploys all required
 configuration files.  
 
 ## Start/Stop Operations
@@ -91,5 +91,5 @@ service not being operational.
 ## Monitoring
 
 As you can see from the Dashboard view, monitoring is a key element of Ambari.
-All of these events can also be integerated into your unified dashboard that
+All of these events can also be integrated into your unified dashboard that
 spans multiple technologies and vendors.
