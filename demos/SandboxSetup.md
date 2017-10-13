@@ -5,9 +5,13 @@ These demos were last tested with the VirtualBox edition of the
 
 ![alt text](Sandbox2.6.1.png "2.6.1 Checksum")
 
+Demos were tested with setting VirtualBox RAM to 10240 MB (up from 8192 MB).
+
+NOTE: If seeing "issues" with subsequent restarts of the VirtualBox Sandbox, then see if 
+[this HCC answer](https://community.hortonworks.com/questions/139184/sandbox-26-unable-to-start-failed-to-start-crash-r.html?childToView=139428#answer-139428) resolves your concerns.
+
 NOTE: If a more recent version is present you will likely need to naviagate to the "Hortonworks Sandbox Archive" section to find this version. 
 
-Demos were tested with setting VirtualBox RAM to 10240 MB (up from 8192 MB).
 
 ## Setup Passwords
 
